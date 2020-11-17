@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Countries</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <script src="script.js"></script>
+    <header class="header">
+        <div class="wrapper header__container">
+            <h1 class="header__title">API Countries</h1>
+            <div class="header__theme" id="change-theme">
+                <img class="theme__icon" src="img/moon-regular.svg" alt="">
+                <span class="theme__text">Dark Mode</span>
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="wrapper nav__search">
+            <input class="input__search" type="search" id="input__search">
+        </div>
+    </nav>
+    <aside class="aside">
+        <div class="wrapper aside__container">
+            <select name="region" id="region">
+                <option value="america">America</option>
+                <option value="asia">Asia</option>
+            </select>
+        </div>
+    </aside>
+    <main class="main">
+        <div class="wrapper">
+            <section class="card__country">
+                <div class="card__img">
+                    <img class="flag" src="https://restcountries.eu/data/deu.svg" alt="Germany">
+                </div>
+                <div class="card__body">
+                    <h2 class="card__title">Germany</h2>
+                    <ul class="card__features">
+                        <li class="item"><strong class="feature">Populario:</strong> 81.770,900</li>
+                        <li class="item"><strong class="feature">Region:</strong> Europe</li>
+                        <li class="item"><strong class="feature">Capital:</strong> Berlin</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
 </body>
 </html>

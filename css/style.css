@@ -1,0 +1,157 @@
+/* ========================== BASE STYLES ========================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root {
+    --background: hsl(0, 0%, 97%);
+    --text: hsl(200, 15%, 8%);
+    --input: hsl(0, 0%, 52%);
+    --element: hsl(0, 0%, 100%);
+    --header-height: 4.5rem;
+    --size-icon-theme: 1rem;
+    font-size: 14px;
+}
+img {
+    width: 100%;
+}
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* ========================== HEADER STYLES ========================== */
+
+.header {
+    background-color: var(--element);
+    margin-bottom: 2em;
+    box-shadow: 0 4px 2px hsl(0, 0%, 95%);
+}
+.wrapper {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+.header__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--text);
+}
+.header__theme {
+    display: flex;
+    align-items: center;
+    gap: .75em;
+    cursor: pointer;
+}
+.theme__icon {
+    width: var(--size-icon-theme);
+    height: var(--size-icon-theme);
+}
+.theme__text {
+    font-size: .75rem;
+    color: var(--text);
+}
+
+/* ========================== NAV STYLES ========================== */
+
+.nav {
+    margin-bottom: 2em;
+}
+.nav__search {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.search__input {
+    background-color: var(--element);
+    background-image: url(../img/searchicon.png);
+    background-repeat: no-repeat;
+    background-position: left 2em center;
+    background-size: 16px;
+    border: none;
+    border-radius: .25em;
+    box-shadow: 0 0 2px hsl(0, 0%, 95%);
+    width: 100%;
+    padding: 1em 1em 1em 5em;
+    color: var(--input);
+}
+.selected__container {
+    width: 220px;
+    position: relative;
+}
+.search__selected {
+    width: 100%;
+    padding: 1em 1.5em;
+    background-color: var(--element);
+    border: none;
+    border-radius: .25em;
+    box-shadow: 0 0 2px hsl(0, 0%, 95%);
+    appearance: none;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+}
+.selected__container::before {
+    position: absolute;
+    content: '';
+    display: block;
+    background-image: url(../img/angle-down-solid.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1em;
+    pointer-events: none;
+}
+.search__selected::-ms-expand {
+    display: none;
+}
+.search__selected:
+.selected__option {
+    border: none;
+}
+
+/* ========================== MAIN STYLES ========================== */
+
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2.5em;
+}
+.card__country {
+    background-color: var(--element);
+    overflow: hidden;
+    border-radius: .5em;
+    box-shadow: 0 0 4px hsl(0, 0%, 95%);
+    width: 80%;
+}
+.card__body {
+    padding: 1em 1.5em 2em;
+}
+.card__title {
+    color: var(--text);
+    margin: 0;
+}
+.card__features {
+    list-style-type: none;
+    padding-left: 0;
+}
+.item {
+    margin-bottom: .5em;
+}
+.item:last-child {
+    margin-bottom: 0;
+}

@@ -20,22 +20,33 @@
     </header>
     <nav class="nav">
         <div class="wrapper nav__search">
-            <input class="input__search" type="search" id="input__search">
+            <input class="search__input" type="search" id="input__search" placeholder="Search for a country ...">
+            <div class="selected__container">
+                <select class="search__selected" name="region" id="region">
+                    <option class="selected__option" value="america">America</option>
+                    <option class="selected__option" value="asia">Asia</option>
+                </select>
+            </div>
         </div>
     </nav>
-    <aside class="aside">
-        <div class="wrapper aside__container">
-            <select name="region" id="region">
-                <option value="america">America</option>
-                <option value="asia">Asia</option>
-            </select>
-        </div>
-    </aside>
     <main class="main">
-        <div class="wrapper">
+        <div class="wrapper main__container">
             <section class="card__country">
                 <div class="card__img">
                     <img class="flag" src="https://restcountries.eu/data/deu.svg" alt="Germany">
+                </div>
+                <div class="card__body">
+                    <h2 class="card__title">Germany</h2>
+                    <ul class="card__features">
+                        <li class="item"><strong class="feature">Populario:</strong> 81.770,900</li>
+                        <li class="item"><strong class="feature">Region:</strong> Europe</li>
+                        <li class="item"><strong class="feature">Capital:</strong> Berlin</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="card__country">
+                <div class="card__img">
+                    <img class="flag" src="https://restcountries.eu/data/bra.svg" alt="Germany">
                 </div>
                 <div class="card__body">
                     <h2 class="card__title">Germany</h2>

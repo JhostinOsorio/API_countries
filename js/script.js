@@ -2,6 +2,10 @@ const buttonTheme = document.getElementById('change-theme');
 const inputSearch = document.getElementById('input__search');
 const selectedSearch = document.getElementById('region');
 const mainContainer = document.getElementById('main__container');
+const iconSelected = document.getElementById('iconSelected');
+const iconTheme = document.getElementById('iconTheme');
+let cards__countries;
+let theme = 'light';
 
 const getCountriesByRegion = async (region) => {
     const countries = await fetch(`https://restcountries.eu/rest/v2/region/${region}`).then(data => data.json())
@@ -28,25 +32,26 @@ const createCard = (urlFlag, country, features) => {
     const card__features = document.createElement('ul');
 
     section.setAttribute('class', 'card__country');
+    section.setAttribute('data-name', country);
 
+    flag.setAttribute('class', 'flag');
     flag.src = urlFlag;
     flag.alt = country;
-    flag.setAttribute('class', 'flag');
 
-    card__img.append(flag);
     card__img.setAttribute('class', 'card__img');
+    card__img.append(flag);
 
-    card__title.textContent = country;
     card__title.setAttribute('class', 'card__title');
+    card__title.textContent = country;
 
     card__features.setAttribute('class', 'card__features');
     for (const key in features) {
         const li__feature = document.createElement('li');
-        const strong = document.createElement('strong');
+        const span = document.createElement('span');
         li__feature.setAttribute('class', 'item');
-        strong.setAttribute('class', 'feature');
-        strong.textContent = key + ':';
-        li__feature.append(strong);
+        span.setAttribute('class', 'feature');
+        span.textContent = key + ':';
+        li__feature.append(span);
         li__feature.append(' '+features[key]);
         card__features.append(li__feature);
     }
@@ -85,6 +90,12 @@ const paintCountry = async (region = null, name = null) => {
         });
         mainContainer.innerHTML = '';
         mainContainer.append(fragment);
+        cards__countries = document.getElementsByClassName('card__country');
+        [...cards__countries].forEach(card => {
+            card.addEventListener('click', e => {
+                alert(card.getAttribute('data-name'));
+            });
+        });
     } else {
         mainContainer.innerHTML = `
             <h2>Not found results for ${inputSearch.value}</h2>
@@ -106,9 +117,27 @@ inputSearch.addEventListener('keyup', e => {
     const name = e.target.value;
     if (name.length >= 3) { 
         paintCountry(null, name);
-    } else {
+    } else if (name.length == 2) {
+        paintCountry();
+    }
+});
+
+inputSearch.addEventListener('cl', e => {
+    const name = e.target.value;
+    if (name.length >= 3) { 
+        paintCountry(null, name);
+    } else if (name.length == 2) {
         paintCountry();
     }
 });
 
 paintCountry();
+
+buttonTheme.addEventListener('click', e => {
+    document.body.classList.toggle('dark');
+    if (document.body.classList.contains('dark')) {
+        iconTheme.setAttribute('src', `../img/moon-regular-dark.svg`);
+    } else {
+        iconTheme.setAttribute('src', `../img/moon-regular.svg`);
+    }
+});

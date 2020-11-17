@@ -23,14 +23,18 @@
             <input class="search__input" type="search" id="input__search" placeholder="Search for a country ...">
             <div class="selected__container">
                 <select class="search__selected" name="region" id="region">
-                    <option class="selected__option" value="america">America</option>
+                    <option class="selected__option" value="default" selected>Filter by region</option>
+                    <option class="selected__option" value="africa">Africa</option>
+                    <option class="selected__option" value="americas">Americas</option>
                     <option class="selected__option" value="asia">Asia</option>
+                    <option class="selected__option" value="europe">Europe</option>
+                    <option class="selected__option" value="oceania">Oceanía</option>
                 </select>
             </div>
         </div>
     </nav>
     <main class="main">
-        <div class="wrapper main__container">
+        <div class="wrapper main__container" id="main__container">
             <section class="card__country">
                 <div class="card__img">
                     <img class="flag" src="https://restcountries.eu/data/deu.svg" alt="Germany">
@@ -38,7 +42,7 @@
                 <div class="card__body">
                     <h2 class="card__title">Germany</h2>
                     <ul class="card__features">
-                        <li class="item"><strong class="feature">Populario:</strong> 81.770,900</li>
+                        <li class="item"><strong class="feature">Population:</strong> 81.770,900</li>
                         <li class="item"><strong class="feature">Region:</strong> Europe</li>
                         <li class="item"><strong class="feature">Capital:</strong> Berlin</li>
                     </ul>

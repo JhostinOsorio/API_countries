@@ -93,7 +93,10 @@ const paintCountry = async (region = null, name = null) => {
         cards__countries = document.getElementsByClassName('card__country');
         [...cards__countries].forEach(card => {
             card.addEventListener('click', e => {
-                alert(card.getAttribute('data-name'));
+                localStorage.setItem('countrySelected', {
+                    name : card.getAttribute('data-name')
+                });
+                location.pathname = '/detail.html';
             });
         });
     } else {
@@ -136,8 +139,8 @@ paintCountry();
 buttonTheme.addEventListener('click', e => {
     document.body.classList.toggle('dark');
     if (document.body.classList.contains('dark')) {
-        iconTheme.setAttribute('src', `../img/moon-regular-dark.svg`);
+        iconTheme.setAttribute('src', `./img/moon-regular-dark.svg`);
     } else {
-        iconTheme.setAttribute('src', `../img/moon-regular.svg`);
+        iconTheme.setAttribute('src', `./img/moon-regular.svg`);
     }
 });

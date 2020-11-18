@@ -93,10 +93,11 @@ const paintCountry = async (region = null, name = null) => {
         cards__countries = document.getElementsByClassName('card__country');
         [...cards__countries].forEach(card => {
             card.addEventListener('click', e => {
-                localStorage.setItem('countrySelected', {
+                const data = {
                     name : card.getAttribute('data-name')
-                });
-                location.pathname = '/detail.html';
+                }
+                localStorage.setItem('countrySelected', JSON.stringify(data));
+                location.pathname = './detail.html';
             });
         });
     } else {

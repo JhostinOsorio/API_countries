@@ -81,7 +81,8 @@ const createBorderCountries = (countries) => {
         const a = document.createElement('a');
         a.setAttribute('href', './detail.html');
         a.setAttribute('class', 'btn btn-countries');
-        a.innerHTML = `<pre>${country}</pre>`;
+        a.setAttribute('translate', 'no');
+        a.innerHTML = `${country}`;
         a.addEventListener('click', e => {
             e.preventDefault();
             showDetailCountry(null, country);

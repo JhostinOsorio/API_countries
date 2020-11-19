@@ -13,19 +13,51 @@
         <div class="wrapper header__container">
             <h1 class="header__title">API Countries</h1>
             <div class="header__theme" id="change-theme">
-                <img class="theme__icon" src="./img/moon-regular.svg" alt="Icon Theme" id="iconTheme">
+                <img class="theme__icon" src="./img/moon-regular-dark.svg" alt="Icon Theme" id="iconTheme">
                 <span class="theme__text">Dark Mode</span>
             </div>
         </div>
     </header>
     <nav class="nav">
-        <div class="wrapper nav__search">
-            
+        <div class="wrapper nav__wrapper">
+            <a class="btn" href="/API_countries">Back</a>
+            <!-- <a href="/" class="btn btn-back">Home</a> -->
         </div>
     </nav>
     <main class="main">
-        <div class="wrapper main__container" id="main__container">
-            
+        <div class="wrapper" id="container__country">
+            <article class="card-detail">
+                <div class="card-detail__img">
+                    <img class="card-detail__flag" id="card-detail__flag" src="" alt="">
+                </div>
+                <div class="card-detail__data">
+                    <header class="card-detail__header">
+                        <h2 class="card-detail__title" id="card-detail__title"></h2>
+                    </header>
+                    <div class="card-detail__body">
+                        <ul class="card__features" id="card__features--primary">
+                            <li class="item"><span class="feature">Name:</span> 22000000</li>
+                            <li class="item"><span class="feature">Population:</span> 22000000</li>
+                            <li class="item"><span class="feature">Region:</span> 22000000</li>
+                            <li class="item"><span class="feature">Sub Region:</span> 22000000</li>
+                            <li class="item"><span class="feature">Capital:</span> 22000000</li>
+                        </ul>
+                        <ul class="card__features" id="card__features--secondary">
+                            <li class="item"><span class="feature">Top Level Domain:</span> 22000000</li>
+                            <li class="item"><span class="feature">Curriencies:</span> 22000000</li>
+                            <li class="item"><span class="feature">Lenguages:</span> 22000000</li>
+                        </ul>
+                    </div>
+                    <footer class="card-detail__footer">
+                        <p class="feature footer__feature">Border Countries:</p>
+                        <div class="group-buttons" id="border__countries">
+                            <a href="#" class="btn btn-countries">Chile</a>
+                            <a href="#" class="btn btn-countries">Uruguay</a>
+                            <a href="#" class="btn btn-countries">Brasil</a>
+                        </div>
+                    </footer>
+                </div>
+            </article>
         </div>
     </main>
     <script src="js/script.js"></script>

@@ -5,7 +5,15 @@ const container__countries = document.getElementById('container__countries');
 const container__country = document.getElementById('container__country');
 const iconSelected = document.getElementById('iconSelected');
 const iconTheme = document.getElementById('iconTheme');
+const nameProject = '/API_countries';
 let cards__countries;
+
+
+if (location.pathname == `${nameProject}/detail.html`) {
+    if (!localStorage.getItem('countrySelected')) {
+        location.pathname = `${nameProject}/`;
+    }
+}
 
 const getCountriesByRegion = async (region) => {
     const countries = await fetch(`https://restcountries.eu/rest/v2/region/${region}`).then(data => data.json())
@@ -62,8 +70,7 @@ const showDetailCountry = async (countryFullName = null, countryCode = null) => 
         country = await getCountryByCode(countryCode);
     }
     localStorage.setItem('countrySelected', JSON.stringify(country));
-    location.pathname = '/API_countries/detail.html';
-    // location.pathname = '/detail.html';
+    location.pathname = `${nameProject}/detail.html`;
 }
 
 const createBorderCountries = (countries) => {
@@ -74,7 +81,7 @@ const createBorderCountries = (countries) => {
         const a = document.createElement('a');
         a.setAttribute('href', './detail.html');
         a.setAttribute('class', 'btn btn-countries');
-        a.textContent = country;
+        a.innerHTML = `<code>${country}</code>`;
         a.addEventListener('click', e => {
             e.preventDefault();
             showDetailCountry(null, country);

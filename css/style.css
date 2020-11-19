@@ -13,6 +13,9 @@
 img {
     width: 100%;
 }
+abbr {
+    text-decoration: none;
+}
 body {
     margin: 0;
     font-family: 'Nunito Sans', sans-serif;
@@ -285,7 +288,7 @@ body {
 
 .group-buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
     gap: 1em;
 }
 

@@ -19,7 +19,8 @@ body {
     background-color: var(--background);
     color: var(--text);
     --background: hsl(0, 0%, 97%);
-    --text: hsl(200, 15%, 8%);
+    --text: hsl(199, 16%, 20%);
+    --text-feature: hsl(200, 15%, 44%);
     --input: hsl(0, 0%, 52%);
     --element: hsl(0, 0%, 100%);
     --box-shadow-header: 0 4px 2px hsl(0, 0%, 95%);
@@ -29,6 +30,7 @@ body {
 .dark {
     --background: hsl(207, 26%, 17%);
     --text: hsl(0, 0%, 100%);
+    --text-feature: hsl(0, 0%, 60%);
     --input: hsl(0, 0%, 98%);
     --element: hsl(209, 23%, 22%);
     --box-shadow-header: 0 4px 2px hsl(207, 26%, 20%);
@@ -64,12 +66,13 @@ body {
 .header__theme {
     display: flex;
     align-items: center;
-    gap: .75em;
     cursor: pointer;
 }
 .theme__icon {
+    display: block;
     width: var(--size-icon-theme);
     height: var(--size-icon-theme);
+    margin-right: .5em;
 }
 .theme__text {
     font-size: .75rem;
@@ -82,8 +85,7 @@ body {
     margin-bottom: 2em;
 }
 .nav__search {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 2em;
 }
 .search__input {
@@ -161,7 +163,7 @@ body {
     border-radius: .5em;
     box-shadow: var(--box-shadow-card);
     max-width: 240px;
-    width: 80%;
+    width: 98%;
     cursor: pointer;
 }
 .card__img {
@@ -189,12 +191,14 @@ body {
 .item {
     margin-bottom: .5em;
     font-weight: 400;
+    color: var(--text-feature);
 }
 .item:last-child {
     margin-bottom: 0;
 }
 .feature {
     font-weight: 600;
+    color: var(--text);
 }
 
 /* ========================== DETAIL STYLES ========================== */
@@ -337,6 +341,9 @@ body {
         max-width: 440px;
         height: 325px;
     }
+    .theme__text {
+        font-size: .9rem;
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -347,7 +354,7 @@ body {
         max-width: 260px;
     }
     .nav__search {
-        flex-direction: row;
+        grid-template-columns: 600px 220px;
         justify-content: space-between;
     }
     .search__input {
@@ -357,6 +364,7 @@ body {
     .selected__container {
         max-width: 220px;
         width: 90%;
+        justify-self: end;
     }
     .card-detail {
         gap: 0;

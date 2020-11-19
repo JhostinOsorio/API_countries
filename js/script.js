@@ -5,8 +5,8 @@ const container__countries = document.getElementById('container__countries');
 const container__country = document.getElementById('container__country');
 const iconSelected = document.getElementById('iconSelected');
 const iconTheme = document.getElementById('iconTheme');
-// const nameProject = '/API_countries';
-const nameProject = '';
+const nameProject = '/API_countries';
+// const nameProject = '';
 let cards__countries;
 
 

@@ -5,7 +5,8 @@ const container__countries = document.getElementById('container__countries');
 const container__country = document.getElementById('container__country');
 const iconSelected = document.getElementById('iconSelected');
 const iconTheme = document.getElementById('iconTheme');
-const nameProject = '/API_countries';
+// const nameProject = '/API_countries';
+const nameProject = '';
 let cards__countries;
 
 
@@ -162,7 +163,9 @@ const paintCountry = async (region = null, name = null) => {
 
             [...cards__countries].forEach(card => {
                 card.addEventListener('click', e => {
-                    showDetailCountry(card.getAttribute('data-name'))
+                    (async()=>{
+                        await showDetailCountry(card.getAttribute('data-name'))
+                    })();
                 });
             });
         } else {

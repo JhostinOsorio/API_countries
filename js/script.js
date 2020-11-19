@@ -16,6 +16,10 @@ if (location.pathname == `${nameProject}/detail.html`) {
     }
 }
 
+if (inputSearch) {
+    inputSearch.value = '';
+}
+
 const getCountriesByRegion = async (region) => {
     const countries = await fetch(`https://restcountries.eu/rest/v2/region/${region}`).then(data => data.json())
     return countries;
@@ -163,9 +167,7 @@ const paintCountry = async (region = null, name = null) => {
 
             [...cards__countries].forEach(card => {
                 card.addEventListener('click', e => {
-                    (async()=>{
-                        await showDetailCountry(card.getAttribute('data-name'))
-                    })();
+                    showDetailCountry(card.getAttribute('data-name'));
                 });
             });
         } else {
@@ -202,10 +204,6 @@ if (selectedSearch) {
 
 if (inputSearch) {
     inputSearch.addEventListener('keyup', e => {
-        listCountriesBy('name', e.target.value);
-    });
-    
-    inputSearch.addEventListener('change', e => {
         listCountriesBy('name', e.target.value);
     });
 }

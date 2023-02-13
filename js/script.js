@@ -6,6 +6,7 @@ const container__country = document.getElementById('container__country');
 const iconSelected = document.getElementById('iconSelected');
 const iconTheme = document.getElementById('iconTheme');
 const nameProject = '/API_countries';
+const BASE_API = 'https://restcountries.com'
 // const nameProject = '';
 let cards__countries;
 
@@ -21,27 +22,27 @@ if (inputSearch) {
 }
 
 const getCountriesByRegion = async (region) => {
-    const countries = await fetch(`https://restcountries.eu/rest/v2/region/${region}`).then(data => data.json())
+    const countries = await fetch(`${BASE_API}/v2/region/${region}`).then(data => data.json())
     return countries;
 };
 
 const getCountriesByName = async (name) => {
-    const countries = await fetch(`https://restcountries.eu/rest/v2/name/${name}`).then(data => data.json())
+    const countries = await fetch(`${BASE_API}/v2/name/${name}`).then(data => data.json())
     return countries;
 }
 
 const getCountriesByFullName = async (fullName) => {
-    const country = await fetch(`https://restcountries.eu/rest/v2/name/${fullName}?fullText=true`).then(data => data.json());
+    const country = await fetch(`${BASE_API}/v2/name/${fullName}?fullText=true`).then(data => data.json());
     return country;
 }
 
 const getCountryByCode = async (codeCountry) => {
-    const country = await fetch(`https://restcountries.eu/rest/v2/alpha/${codeCountry}`).then(data => data.json());
+    const country = await fetch(`${BASE_API}/v2/alpha/${codeCountry}`).then(data => data.json());
     return country;
 }
 
 const getCountriesAll = async () => {
-    const countries = await fetch('https://restcountries.eu/rest/v2/all').then(data => data.json());
+    const countries = await fetch('${BASE_API}/v2/all').then(data => data.json());
     return countries;
 }
 

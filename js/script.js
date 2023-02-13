@@ -42,7 +42,7 @@ const getCountryByCode = async (codeCountry) => {
 }
 
 const getCountriesAll = async () => {
-    const countries = await fetch('${BASE_API}/v2/all').then(data => data.json());
+    const countries = await fetch(`${BASE_API}/v2/all`).then(data => data.json());
     return countries;
 }
 
